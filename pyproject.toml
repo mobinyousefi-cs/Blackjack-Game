@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blackjack"
+version = "0.1.0"
+description = "Tkinter-based Blackjack (21) with auto-generated card assets"
+readme = "README.md"
+authors = [{ name = "Mobin Yousefi", email = "" }]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "pillow>=10.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mobinyousefi-cs"
+
+[project.scripts]
+blackjack = "blackjack.main:main"
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "B", "UP", "N"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
